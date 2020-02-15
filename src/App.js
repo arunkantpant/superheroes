@@ -12,8 +12,10 @@ class App extends Component {
   render() {
     return (
       <div className={classes.App}>
-        <h1>{this.state.heroes[0].name}</h1>
-        <h3>{this.state.heroes[0].power}</h3>
+        <div className={classes.heroCard}>
+          <h1>{this.state.heroes[0].name}</h1>
+          <h3>{this.state.heroes[0].power}</h3>
+        </div>
       </div>
     );
   }
