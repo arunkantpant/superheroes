@@ -5,18 +5,35 @@ import classes from './App.module.css';
 class App extends Component {
   state = {
     heroes: [
-      {name: 'Geralt', power: 'Witcher'}
+      {name: 'Geralt', power: 'Witcher'},
+      {name: '2B', power: 'Android'},
+      {name: 'Aloy', power: 'Nora Brave'},
+      {name: 'Emily Caldwin', power: 'Master Assassin'},
+      {name: 'Artyom', power: 'Master Survivor'},
+      {name: 'Dohvakiin', power: 'Dragonborn'}
     ]
   };
 
   render() {
-    return (
-      <div className={classes.App}>
+    const heroesDiv = this.state.heroes.map(hero => (
         <div className={classes.heroCard}>
-          <h1>{this.state.heroes[0].name}</h1>
-          <h3>{this.state.heroes[0].power}</h3>
+          <h1>{hero.name}</h1>
+          <h3>{hero.power}</h3>
         </div>
-      </div>
+    ));
+
+    return (
+      <>
+        <div>
+          <h1 style={{
+            textAlign: "center",
+            fontSize: "40px"
+          }}>My Heroes</h1>
+        </div>
+        <div className={classes.App}>
+          {heroesDiv}
+        </div>
+      </>
     );
   }
 }
