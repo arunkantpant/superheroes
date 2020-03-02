@@ -25,7 +25,6 @@ class App extends Component {
 
   removeHeroHandler = (heroId) => {
     const myHeroes = [...this.state.heroes];
-    console.log(myHeroes);
     const updatedHeroes = myHeroes.filter(hero => hero.id !== heroId);
     this.setState({heroes: updatedHeroes});
   }
@@ -35,9 +34,8 @@ class App extends Component {
         <div
           key={hero.id}
           className={classes.heroCard}
-          onClick={() => this.removeHeroHandler(hero.id)}
         >
-          <h1>{hero.name}</h1>
+          <h1 onClick={() => this.removeHeroHandler(hero.id)}>{hero.name}</h1>
           <h3>{hero.power}</h3>
           <div>
             <InputHandler
